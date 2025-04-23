@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Horsopia Service</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            body { margin: 0; font-family: sans-serif; }
+            .navbar {
+              position: fixed;
+              top: 0;
+              width: 100%;
+              background: white;
+              z-index: 1000;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 10px 30px;
+              box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            .navbar ul { list-style: none; display: flex; margin: 0; padding: 0; }
+            .navbar li { position: relative; margin: 0 10px; }
+            .dropdown-menu {
+              display: none;
+              position: absolute;
+              background: white;
+              top: 100%;
+              left: 0;
+              box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+            .dropdown:hover .dropdown-menu { display: block; }
+            .slogan { margin-top: 80px; text-align: center; padding: 60px 20px; background: #f2f2f2; }
+            .keywords span { margin: 0 10px; font-weight: bold; }
+            section { padding: 60px 20px; }
+            .structure .team { display: flex; flex-wrap: wrap; gap: 20px; }
+            .member { width: 150px; text-align: center; }
+            .scope-images { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+            .scope-item { flex: 1; min-width: 250px; text-align: center; }
+            .scope-item img { width: 100%; height: auto; cursor: pointer; }
+            .calendar-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+            .calendar-month { background: #f9f9f9; padding: 15px; border-radius: 8px; }
+            .partners { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+            .partners img { height: 50px; margin: 10px; }
+            footer { background: #eee; padding: 40px 20px; text-align: center; }
+          </style>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar">
+              <a href="index.html" class="logo"><img src="logo.png" alt="Horsopia Logo" height="40"></a>
+              <ul class="nav-links">
+                <li><a href="index.html#about">协会介绍</a></li>
+                <li><a href="index.html#structure">组织架构</a></li>
+                <li class="dropdown">
+                  <a href="index.html#scope">活动范围</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="journey.html">Journey</a></li>
+                    <li><a href="service.html">Service</a></li>
+                    <li><a href="art.html">Art</a></li>
+                  </ul>
+                </li>
+                <li><a href="index.html#calendar">活动日历</a></li>
+                <li><a href="index.html#membership">会员制度</a></li>
+                <li><a href="index.html#partners">合作品牌展示</a></li>
+              </ul>
+              <div class="nav-tools">
+                <input type="text" placeholder="搜索">
+                <button>语言切换</button>
+                <a href="index.html#contact">联系</a>
+              </div>
+            </nav>
+          </header>
+    
+  <main>
+    <section class="membership-header">
+      <h1>会员制度</h1>
+    </section>
+
+    <section class="membership-pyramid">
+      <div class="pyramid">
+        <div class="tier top">至尊骑士</div>
+        <div class="tier">黑骑士</div>
+        <div class="tier">黄金侍骑</div>
+        <div class="tier">白马骑士</div>
+        <div class="tier">新星骑士</div>
+      </div>
+    </section>
+
+    <section class="membership-table">
+      <table>
+        <tr>
+          <th>等级</th>
+          <th>等级要求</th>
+          <th>享受折扣*</th>
+          <th>其他福利</th>
+        </tr>
+        <tr>
+          <th>至尊骑士</th>
+          <td>20000积分+协会至尊会员邀请函</td>
+          <td>88折</td>
+          <td>全部黑骑士所享福利 马术比赛VIP晚宴折扣券 高级商务车接送机服务 1 次 8 张欧洲经典景点门票 奥运/五星赛/国际骑手私教课1节/年 积分永不过期</td>
+        </tr>
+        <tr>
+          <th>黑骑士</th>
+          <td>5000积分</td>
+          <td>9折</td>
+          <td>全部黄金侍骑所享福利
+            家庭轿车接机服务1次
+            4 张欧洲经典景点门票
+            特级教练私教1节（中阶）
+            免费比赛 + 租马一次
+            </td>
+        </tr>
+        <tr>
+          <th>黄金侍骑</th>
+          <td>2000积分</td>
+          <td>95折</td>
+          <td>全部白马骑士所享福利
+            🎠 俱乐部级别 免费比赛 + 租马 1 次</td>
+        </tr>
+        <tr>
+          <th>白马骑士</th>
+          <td>500积分</td>
+          <td>98折</td>
+          <td>全部新星骑手所享福利
+            🏇 国家级教练私教课 1 节（入门级或青训教练）</td>
+        </tr>
+        <tr>
+          <th>新星骑手</th>
+          <td>300积分</td>
+          <td>99折</td>
+          <td>定制纪念礼包, 如: 徽章、手环、定制卡贴</td>
+        </tr>
+      </table>
+      <p class="note">
+        *积分规则: 每消费100人民币=1积分；除特殊标注外，积分自获得之日起两年内有效，逾期自动清空；会员折扣可与其他折扣叠加使用，更多福利敬请期待！
+      </p>
+    </section>
+  </main>
+</body>
+</html>

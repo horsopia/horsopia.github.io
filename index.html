@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Horsopia Internationale</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: white;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .navbar ul { list-style: none; display: flex; margin: 0; padding: 0; }
+    .navbar li { position: relative; margin: 0 10px; }
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      background: white;
+      top: 100%;
+      left: 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .dropdown:hover .dropdown-menu { display: block; }
+    .slogan { margin-top: 80px; text-align: center; padding: 60px 20px; background: #f2f2f2; }
+    .keywords span { margin: 0 10px; font-weight: bold; }
+    section { padding: 60px 20px; }
+    .structure .team { display: flex; flex-wrap: wrap; gap: 20px; }
+    .member { width: 150px; text-align: center; }
+    .scope-images { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+    .scope-item { flex: 1; min-width: 250px; text-align: center; }
+    .scope-item img { width: 100%; height: auto; cursor: pointer; }
+    .calendar-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+    .calendar-month { background: #f9f9f9; padding: 15px; border-radius: 8px; }
+    .partners { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .partners img { height: 50px; margin: 10px; }
+    footer { background: #eee; padding: 40px 20px; text-align: center; }
+  </style>
+</head>
+<body>
+  <!-- 导航栏 -->
+  <header>
+    <nav class="navbar">
+      <a href="#home" class="logo"><img src="logo.png" alt="Horsopia Logo" height="40"></a>
+      <ul class="nav-links">
+        <li><a href="#about">协会介绍</a></li>
+        <li><a href="#structure">组织架构</a></li>
+        <li class="dropdown">
+          <a href="#scope">活动范围</a>
+          <ul class="dropdown-menu">
+            <li><a href="journey.html">Journey</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="art.html">Art</a></li>
+          </ul>
+        </li>
+        <li><a href="#calendar">活动日历</a></li>
+        <li><a href="membership.html">会员制度</a></li>
+        <li><a href="#partners">合作品牌展示</a></li>
+      </ul>
+      <div class="nav-tools">
+        <input type="text" placeholder="搜索">
+        <button>语言切换</button>
+        <a href="#contact">联系</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Slogan 部分 -->
+  <section id="home" class="slogan">
+    <h1>“与我们一起，开始这段跨越疆界的马术之旅。”</h1>
+    <div class="keywords">
+      <span>自由</span>
+      <span>野心</span>
+      <span>真诚</span>
+    </div>
+  </section>
+
+  <!-- 关于我们 -->
+  <section id="about" class="about">
+    <h2>关于我们</h2>
+    <p>
+      Horsopia Internationale 环球马托邦协会，起源于法国——这片拥有悠久马术传统与深厚文化底蕴的土地。
+      自2019年起，我们便投身于马术活动的组织与推广，并于2025年在法国尚皮尼·马恩河畔警察局正式注册成立。
+    </p>
+    <p>
+      我们的创始团队由几位志同道合的朋友组成，有的是学生时代的挚友，有的是在卢瓦河谷的一家马术学院因马结缘。
+    </p>
+    <p>
+      我们热爱马术，也致力于传播马术文化，促进马术产业的发展。我们通过欧洲马术培训体系推广、马匹资源介绍以及马术职业路径的搭建，连接法国乃至欧洲与中国的马术体系。同时, 我们鼓励以马为灵感的艺术创作，探索马术与文化艺术的多元融合。
+    </p>
+    <p>
+      过去六年，我们与法国、荷兰等地的专业马术学校紧密合作，联合推出一系列高品质、分级化、适龄化的马术课程：包括青少年集训营、成人提升班，以及为中高级骑手量身定制的私教项目。
+      我们也成功引荐数位法国国家级教练前往中国长期执教，并协助促成法国运动马匹的出口与合作，推动中法之间的马术交流。
+    </p>
+  </section>
+
+  <!-- 组织架构 -->
+  <section id="structure" class="structure">
+    <h2>组织架构</h2>
+    <div class="team">
+      <div class="member">
+        <img src="member1.jpg" alt="成员1">
+        <p>JEN</p>
+        <p>会长</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 活动范围 -->
+  <section id="scope">
+    <h2>活动范围</h2>
+    <blockquote>我们致力于连接国际马术文化，围绕骑士精神，打造融合游学、专业服务与艺术的马术生态。</blockquote>
+    <div class="scope-images">
+      <div class="scope-item">
+        <a href="journey.html"><img src="journey.jpg" alt="Journey"></a>
+        <h3>Journey</h3>
+        <p>Horsopia Journey 致力于将马术元素融入丰富多彩的旅行之中，让更多人感受到马术的乐趣。</p>
+      </div>
+      <div class="scope-item">
+        <a href="service.html"><img src="service.jpg" alt="Service"></a>
+        <h3>Service</h3>
+        <p>Horsopia Service是协会旗下的专业服务部门，聚焦“引进来 + 走出去”双向通道，致力于推动国内马术行业的专业化、国际化进程。</p>
+      </div>
+      <div class="scope-item">
+        <a href="art.html"><img src="art.jpg" alt="Art"></a>
+        <h3>Art</h3>
+        <p>Horsopia Art以马术为灵感，连接艺术与生活方式，甄选与打造兼具美感与实用性的艺术品与日用品，让马术之美融入日常，搭建全球文化桥梁。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 活动日历 -->
+  <section id="calendar">
+    <h2>活动日历</h2>
+    <div class="calendar-grid">
+      <div class="calendar-month"><strong>1-2月</strong><br>法国马术夏令营</div>
+      <div class="calendar-month"><strong>3月</strong><br>南法 & 意大利深度游<br>五星级马术赛事爱马仕跳跃幕后工作</div>
+      <div class="calendar-month"><strong>4月</strong><br>组织观摩法国三项赛全法锦标赛</div>
+      <div class="calendar-month"><strong>5月</strong><br>马匹回国参加训练<br>教练回国正式授课</div>
+      <div class="calendar-month"><strong>6-8月</strong><br>法国基础班与进阶班<br>马术夏令营</div>
+      <div class="calendar-month"><strong>9月</strong><br>敬请期待</div>
+      <div class="calendar-month"><strong>10月</strong><br>南法 女性专属马匹疗愈团</div>
+      <div class="calendar-month"><strong>11月</strong><br>葡萄牙 欧洲古典舞步马术深度游</div>
+      <div class="calendar-month"><strong>12月</strong><br>敬请期待</div>
+    </div>
+  </section>
+
+  <!-- 合作品牌展示 -->
+  <section id="partners">
+    <h2>部分合作品牌展示</h2>
+    <div class="partners">
+      <img src="brand1.png" alt="品牌1">
+      <img src="brand2.png" alt="品牌2">
+      <img src="brand3.png" alt="品牌3">
+    </div>
+    <div>
+      <h3>欢迎以下品牌方垂询合作</h3>
+      <p>酒店/汽车品牌</p>
+    </div>
+  </section>
+
+  <!-- 联系方式 -->
+  <footer id="contact">
+    <h2>联系方式</h2>
+    <p>电话：+33 X XX XX XX XX</p>
+    <p>网站：www.horsopia.org</p>
+    <p>邮箱：contact@horsopia.org</p>
+    <p>地址：法国 · 尚皮尼 · 马恩河畔</p>
+  </footer>
+
+</body>
+</html>
