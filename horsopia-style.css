@@ -1,0 +1,217 @@
+
+/* 颜色定义 */
+:root {
+  --blue-main: #5fa8d3;
+  --blue-light: #cae9ff;
+  --blue-deep: #1b4965;
+  --blue-accent: #62b6cb;
+  --blue-soft: #bee9e8;
+  --white: #ffffff;
+  --gray-light: #f9f9f9;
+  --text-dark: #1b4965;
+  --text-light: #ffffff;
+  --font-main: 'Source Han Serif', serif;
+  --font-en: 'Georgia', serif;
+}
+
+/* 基础设置 */
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  background-color: var(--blue-light);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--blue-main);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--blue-deep);
+}
+
+/* 导航栏 */
+header {
+  background-color: var(--white);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8em 2em;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5em;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links li a {
+  font-weight: bold;
+  color: var(--blue-deep);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: var(--white);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  list-style: none;
+  padding: 0.5em;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.nav-tools {
+  display: flex;
+  gap: 1em;
+  align-items: center;
+}
+
+.nav-tools input {
+  padding: 0.4em;
+  border: 1px solid var(--blue-accent);
+  border-radius: 5px;
+}
+
+.nav-tools button {
+  background-color: var(--blue-main);
+  color: var(--text-light);
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.nav-tools button:hover {
+  background-color: var(--blue-deep);
+}
+
+/* Slogan 部分 */
+.slogan {
+  background-color: var(--blue-soft);
+  text-align: center;
+  padding: 4em 2em;
+}
+
+.slogan h1 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.keywords span {
+  display: inline-block;
+  background-color: var(--blue-main);
+  color: var(--white);
+  padding: 0.3em 1em;
+  margin: 0.2em;
+  border-radius: 20px;
+}
+
+/* 通用标题样式 */
+section h2 {
+  font-size: 1.8em;
+  border-left: 5px solid var(--blue-main);
+  padding-left: 0.5em;
+  margin-top: 2em;
+}
+
+/* 关于我们 */
+.about, .structure, .partners, footer {
+  padding: 2em;
+  background-color: var(--white);
+  margin: 2em 0;
+}
+
+/* 组织架构 */
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+}
+
+.member {
+  text-align: center;
+}
+
+.member img {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+}
+
+/* 活动范围 */
+.scope-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+  padding: 1em 2em;
+  justify-content: center;
+}
+
+.scope-item {
+  background-color: var(--gray-light);
+  padding: 1em;
+  text-align: center;
+  border-radius: 8px;
+  max-width: 300px;
+}
+
+.scope-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+/* 活动日历 */
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1em;
+  padding: 1em 2em;
+}
+
+.calendar-month {
+  background-color: var(--blue-soft);
+  padding: 1em;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* 合作品牌 */
+.partners {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+}
+
+.partners img {
+  width: 120px;
+  height: auto;
+}
+
+/* 联系方式 */
+footer {
+  background-color: var(--blue-deep);
+  color: var(--white);
+  text-align: center;
+  padding: 2em;
+}
