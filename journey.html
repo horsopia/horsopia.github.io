@@ -1,104 +1,74 @@
-<!-- horsopia journey.html -->
+<!DOCTYPE html>
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Horsopia Journey</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        body { margin: 0; font-family: sans-serif; }
-        .navbar {
-          position: fixed;
-          top: 0;
-          width: 100%;
-          background: white;
-          z-index: 1000;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 10px 30px;
-          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .navbar ul { list-style: none; display: flex; margin: 0; padding: 0; }
-        .navbar li { position: relative; margin: 0 10px; }
-        .dropdown-menu {
-          display: none;
-          position: absolute;
-          background: white;
-          top: 100%;
-          left: 0;
-          box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-        .dropdown:hover .dropdown-menu { display: block; }
-        .slogan { margin-top: 80px; text-align: center; padding: 60px 20px; background: #f2f2f2; }
-        .keywords span { margin: 0 10px; font-weight: bold; }
-        section { padding: 60px 20px; }
-        .structure .team { display: flex; flex-wrap: wrap; gap: 20px; }
-        .member { width: 150px; text-align: center; }
-        .scope-images { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
-        .scope-item { flex: 1; min-width: 250px; text-align: center; }
-        .scope-item img { width: 100%; height: auto; cursor: pointer; }
-        .calendar-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
-        .calendar-month { background: #f9f9f9; padding: 15px; border-radius: 8px; }
-        .partners { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-        .partners img { height: 50px; margin: 10px; }
-        footer { background: #eee; padding: 40px 20px; text-align: center; }
-      </style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horsopia Journey</title>
+  <link rel="stylesheet" href="journey-style.css" />
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-          <a href="index.html" class="logo"><img src="logo.png" alt="Horsopia Logo" height="40"></a>
-          <ul class="nav-links">
-            <li><a href="index.html#about">协会介绍</a></li>
-            <li><a href="index.html#structure">组织架构</a></li>
-            <li class="dropdown">
-              <a href="index.html#scope">活动范围</a>
-              <ul class="dropdown-menu">
-                <li><a href="journey.html">Journey</a></li>
-                <li><a href="service.html">Service</a></li>
-                <li><a href="art.html">Art</a></li>
-              </ul>
-            </li>
-            <li><a href="index.html#calendar">活动日历</a></li>
-            <li><a href="index.html#membership">会员制度</a></li>
-            <li><a href="index.html#partners">合作品牌展示</a></li>
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">
+        <img src="images/Horsopialogo无背景.PNG" alt="Horsopia Logo" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">协会介绍</a></li>
+        <li><a href="index.html#structure">组织架构</a></li>
+        <li class="dropdown">
+          <a href="index.html#scope">活动范围</a>
+          <ul class="dropdown-menu">
+            <li><a href="journey.html">Journey</a></li>
+            <li><a href="service.html">Service</a></li>
+            <li><a href="art.html">Art</a></li>
           </ul>
-          <div class="nav-tools">
-            <input type="text" placeholder="搜索">
-            <button>语言切换</button>
-            <a href="index.html#contact">联系</a>
-          </div>
-        </nav>
-      </header>
-      <section class="journey-hero">
-        <img src="journey-logo.png" alt="Horsopia Journey Logo" class="center-logo" />
-        <p class="journey-intro">
-          始于2019年，与多所国内外知名高水平马术院校建立深度合作，常年承办适合全年龄段、各个水平层次的马术集训课程与研学项目。<br>
-          更有小众精品马背旅行团、马术文化深度游等，线路分布于法国、荷兰、德国、西班牙、葡萄牙等众多欧洲国家，更多线路正在开发中。<br>
-          组织观摩高水平马术赛事，优享VIP观赛席位，品鉴精致美食与佳酿，沉浸式体验马术魅力。
-        </p>
-      </section>
-      
-      <section class="journey-gallery">
-        <h2>往期学员照片 : 欧洲多个国家马术营</h2>
-        <div class="gallery-grid">
-          <!-- 下面是9张图 示例 -->
-          <div class="photo-item"><img src="camp1.jpg" /><p>法国卢瓦尔河谷马术营，学员每日训练与课程安排</p></div>
-          <div class="photo-item"><img src="camp2.jpg" /><p>荷兰皇家马术学院参观与试骑</p></div>
-          <div class="photo-item"><img src="camp3.jpg" /><p>比利时边境森林地带越野骑行课程</p></div>
-          <!-- 继续6张图 -->
-        </div>
-      </section>
-      
-      <section class="event-gallery">
-        <h2>组织观摩各级别马术赛事</h2>
-        <div class="gallery-grid">
-          <div class="photo-item"><img src="event1.jpg" /><p>巴黎国际马术大师赛观赛现场</p></div>
-          <div class="photo-item"><img src="event2.jpg" /><p>德国亚琛世界马术节 VIP观众席</p></div>
-          <div class="photo-item"><img src="event3.jpg" /><p>西班牙皇家马术学校实地参观</p></div>
-          <!-- 继续6张图 -->
-        </div>
-      </section>    
-</body>
-  
+        </li>
+        <li><a href="index.html#calendar">活动日历</a></li>
+        <li><a href="index.html#membership">会员制度</a></li>
+        <li><a href="index.html#partners">合作品牌展示</a></li>
+      </ul>
+      <div class="nav-tools">
+        <input type="text" placeholder="搜索" />
+        <button>语言切换</button>
+        <a href="index.html#contact">联系</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="journey-hero">
+    <img src="images/horsopiajourney_logo.png" alt="Horsopia Journey Logo" class="center-logo" />
+    <p class="journey-intro">
+      始于2019年，与多所国内外知名高水平马术院校建立深度合作，常年承办适合全年龄段、各个水平层次的马术集训课程与研学项目。<br />
+      更有小众精品马背旅行团、马术文化深度游等，线路分布于法国、荷兰、德国、西班牙、葡萄牙等众多欧洲国家，更多线路正在开发中。<br />
+      组织观摩高水平马术赛事，优享VIP观赛席位，品鉴精致美食与佳酿，沉浸式体验马术魅力。
+    </p>
+  </section>
+
+  <!-- Past Camps -->
+  <section class="journey-gallery">
+    <h2>往期学员照片 : 欧洲多个国家马术营</h2>
+    <div class="gallery-grid">
+      <div class="photo-item">
+        <img src="images/camp1.jpg" alt="camp1" />
+        <p>法国卢瓦尔河谷马术营，学员每日训练与课程安排</p>
+      </div>
+      <div class="photo-item">
+        <img src="images/camp2.jpg" alt="camp2" />
+        <p>荷兰皇家马术学院参观与试骑</p>
+      </div>
+      <div class="photo-item">
+        <img src="images/camp3.jpg" alt="camp3" />
+        <p>比利时边境森林地带越野骑行课程</p>
+      </div>
+      <!-- 继续添加其余6张图 -->
+    </div>
+  </section>
+
+  <!-- Event Observations -->
+  <section class="event-gallery">
+    <h2>组织观摩各级别马术赛事</h2>
+    <div class="gallery-grid">
+      <div class="photo-item">
+        <img src="images/event1.jpg" alt="

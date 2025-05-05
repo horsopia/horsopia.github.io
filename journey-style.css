@@ -1,0 +1,185 @@
+/* ====== 基础配色和字体设置 ====== */
+:root {
+    --blue-main: #5fa8d3;
+    --blue-light: #cae9ff;
+    --blue-dark: #1b4965;
+    --blue-mid: #62b6cb;
+    --blue-soft: #bee9e8;
+    --gray-light: #f5f5f5;
+    --font-serif: '思源宋体', 'Source Han Serif SC', serif;
+  }
+  
+  body {
+    margin: 0;
+    font-family: var(--font-serif);
+    background-color: white;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* ====== Header 区域（与主页保持一致）====== */
+  header {
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8em 2em;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5em;
+  }
+  
+  .nav-links li {
+    position: relative;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: var(--blue-dark);
+    font-weight: 500;
+  }
+  
+  .nav-links .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 2.5em;
+    left: 0;
+    background-color: white;
+    border: 1px solid var(--blue-soft);
+    border-radius: 5px;
+    padding: 0.5em 1em;
+    z-index: 10;
+  }
+  
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  
+  .nav-tools {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+  
+  .nav-tools input {
+    padding: 0.4em;
+    border: 1px solid var(--blue-light);
+    border-radius: 4px;
+  }
+  
+  .nav-tools button {
+    background-color: var(--blue-main);
+    color: white;
+    border: none;
+    padding: 0.4em 0.8em;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .nav-tools a {
+    text-decoration: none;
+    color: var(--blue-dark);
+  }
+  
+  /* ====== Hero Logo 区域 ====== */
+  .journey-hero {
+    text-align: center;
+    padding: 3em 2em 2em;
+    background-color: var(--blue-light);
+  }
+  
+  .center-logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1em;
+  }
+  
+  .journey-intro {
+    font-size: 1.1em;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--blue-dark);
+  }
+  
+  /* ====== 图片展示区域 ====== */
+  section {
+    padding: 3em 2em;
+  }
+  
+  h2 {
+    text-align: center;
+    color: var(--blue-main);
+    margin-bottom: 1em;
+  }
+  
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .photo-item {
+    background-color: var(--gray-light);
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 1em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .photo-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .photo-item p {
+    padding: 1em;
+    font-size: 0.95em;
+    color: #444;
+  }
+  
+  /* ====== 响应式优化 ====== */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      gap: 0.8em;
+      margin-top: 1em;
+    }
+  
+    .nav-tools {
+      flex-direction: column;
+      width: 100%;
+      gap: 0.5em;
+      margin-top: 1em;
+    }
+  
+    .journey-intro {
+      font-size: 1em;
+      padding: 0 1em;
+    }
+  }
+  
