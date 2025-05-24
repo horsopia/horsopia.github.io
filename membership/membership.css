@@ -381,3 +381,18 @@ img.wp-smiley, img.emoji {
 @font-face{font-family:"Open Sans";font-style:italic;font-weight:600;font-display:fallback;src:url('/wp-content/themes/patterns-bakery/assets/fonts/open-sans_italic_600.ttf') format('truetype');}
 @font-face{font-family:"Open Sans";font-style:italic;font-weight:700;font-display:fallback;src:url('/wp-content/themes/patterns-bakery/assets/fonts/open-sans_italic_700.ttf') format('truetype');}
 @font-face{font-family:"Open Sans";font-style:italic;font-weight:800;font-display:fallback;src:url('/wp-content/themes/patterns-bakery/assets/fonts/open-sans_italic_800.ttf') format('truetype');}
+/* 固定整个 header 块，包括 logo、标题、副标题和导航栏 */
+header.wp-block-template-part {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: #ffffff; /* 你可以换成你站点的主背景色 */
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* 防止正文内容被 header 遮挡（调整距离） */
+body {
+  padding-top: 0px; /* 根据你 header 实际高度微调 */
+}
