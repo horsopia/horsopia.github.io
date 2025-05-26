@@ -1259,6 +1259,12 @@ a:hover {
     display: none;
   }
 
+  .hero-title {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    padding: 0 15px;
+  }
+
   .nav-toggle {
     display: block;
     position: absolute;
@@ -1351,17 +1357,21 @@ a:hover {
 
   /* 4. Hero 内部链接按钮样式优化 */
   .journey-nav-links a {
-    display: inline-block;
-    padding: 10px 16px;
-    margin: 6px;
+   display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
     font-size: 1rem;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 4px;
+    background-color: #ffffff;
+    color: #274c77;
+    border-radius: 25px;
     text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
   }
 
   .journey-nav-links a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: #a3cef1;
+    color: #1b4965;
   }
 
   /* 5. 引言文字缩进减少 */
@@ -1436,7 +1446,40 @@ a:hover {
     padding: 0 20px;
     font-size: 1rem;
   }
+.art-hero-content {
+    padding: 20px;
+  }
 
+  .art-hero-layout {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .art-logo img {
+    max-width: 160px;
+    margin: 0 auto;
+  }
+
+  .art-hero-title {
+    font-size: 1.75rem;
+    padding: 0 10px;
+  }
+
+  .art-intro-content p {
+    padding: 0 20px;
+    font-size: 1rem;
+  }
+
+  .art-gallery {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .art-image img {
+    aspect-ratio: auto;
+  }
   
   
 }
