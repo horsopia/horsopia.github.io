@@ -1,0 +1,1443 @@
+/* Regular 字体 */
+@font-face {
+  font-family: 'LucidaGrande';
+  src: url('assets/lucida-grande/LucidaGrande.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Bold 字体 */
+@font-face {
+  font-family: 'LucidaGrande';
+  src: url('assets/lucida-grande/LucidaGrandeBold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'LucidaGrande', 'Microsoft YaHei', '微软雅黑', 'PingFang SC', 'Noto Sans SC', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #274c77;
+  background-color: #e7ecef;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #8b8c89;
+}
+
+/* Container */
+.container {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.brand-section {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.site-title {
+    font-size: clamp(0.875rem, 0.875rem + ((1vw - 0.2rem) * 0.52), 1.2rem);
+    font-weight: 700;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.site-title a {
+    color: #274c77;
+}
+
+.site-title a:hover {
+    color: #274c77;
+}
+
+.site-tagline {
+    font-size: 0.875rem;
+    color: #274c77;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Navigation */
+.main-navigation {
+    position: relative;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.hamburger {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: #274c77;
+    position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #274c77;
+    transition: all 0.3s ease;
+}
+
+.hamburger::before {
+    top: -8px;
+}
+
+.hamburger::after {
+    top: 8px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-menu a {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a[aria-current="page"],
+.nav-menu a.active {
+    color: #1b4965;
+    font-weight: bold;
+}
+
+.language-toggle {
+    font-size: 1.2rem;
+}
+
+/* Main Content */
+.main-content {
+    margin-top: 80px; /* Account for fixed header */
+}
+
+/* Hero Banner */
+.hero-banner {
+    position: relative;
+    min-height: 560px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding-top: 0;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 47% 51%;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(139, 140, 137, 0.3);
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: #ffffff;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 2rem + ((1vw - 0.2rem) * 1.4), 2.875rem);
+    font-weight: 700;
+    line-height: 1.4; 
+    margin-bottom: 33px;
+    color: #ffffff;
+    max-width: 90%; 
+    margin-left: auto;
+    margin-right: auto;
+    word-break: keep-all; 
+    text-align: center;
+}
+
+.hero-values {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.hero-values span {
+    font-size: 1.125rem;
+    font-weight: 500;
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: clamp(1.75rem, 1.75rem + ((1vw - 0.2rem) * 0.2), 1.875rem);
+    font-weight: 800;
+    color: #6096ba;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::before,
+.section-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 100px;
+    height: 2px;
+    background-color: #8b8c89;
+    opacity: 0.6;
+}
+
+.section-title::before {
+    right: calc(100% + 20px);
+}
+
+.section-title::after {
+    left: calc(100% + 20px);
+}
+
+.section-separator {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 60px 0;
+    opacity: 0.6;
+}
+
+/* Brand Essence Section */
+.brand-essence {
+    padding: 70px 0;
+    background-color: #ffffff;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    align-items: stretch;
+}
+
+.service-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(179, 155, 124, 0.7), rgba(146, 135, 117, 0.7));
+}
+
+.service-content {
+    padding: 30px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.service-logo {
+    width: 153px;
+    height: auto;
+    margin: 0 auto 20px;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #274c77;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #274c77;
+    color: #e7ecef;
+    padding: 15px 30px;
+    border-radius: 0;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #80c1e7;
+}
+
+/* Activity Calendar */
+.activity-calendar {
+    padding: 70px 0;
+    background-color: #f8f9fa;
+}
+
+.timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.event-card {
+    background-color: #a3cef1;
+    padding: 24px;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-month {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 12px;
+    color: #1b4965;
+}
+
+.event-description {
+    font-size: 0.95em;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Partners Section */
+.partners-section {
+    padding: 50px 0;
+    background-color: #ffffff;
+}
+
+.partners-scroll {
+    overflow: hidden;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    background-color: #f5f5f5;
+    padding: 20px 0;
+    margin-bottom: 40px;
+}
+
+.partners-track {
+    display: flex;
+    width: fit-content;
+    animation: scroll-left 40s linear infinite;
+}
+
+.partners-track img {
+    height: 50px;
+    margin: 0 2em;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.partners-track img:hover {
+    transform: scale(1.1);
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.partnership-info {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.partnership-title {
+    font-size: 1.25rem;
+    color: #555555;
+    margin-bottom: 15px;
+}
+
+.partnership-description {
+    color: #666;
+    color: #666;
+    padding: 5px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+.footer-section h4,
+.footer-section h2 {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.site-footer {
+    background-color: #274c77;
+    color: #ffffff;
+    padding: 50px 0 20px;
+}
+
+.footer-section h2 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.contact-info address {
+    font-style: normal;
+    line-height: 1.8;
+}
+
+.contact-info p {
+    margin-bottom: 8px;
+}
+
+.contact-info a {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: #ce873a;
+}
+
+.brand-info {
+    text-align: center;
+}
+
+.brand-info p {
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-links a {
+    display: inline-block;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.social-icon {
+     width: 24px;
+  height: 24px;
+  margin: 0 10px;
+  transition: transform 0.3s ease;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 1px solid #274c77;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 20px;
+}
+
+.footer-nav a {
+    font-size: 13px;
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #ce873a;
+}
+
+.copyright {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+/* Scroll to Top Button */
+.scroll-to-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #274c77;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    background-color: #1b4965;
+    transform: translateY(-2px);
+}
+
+/* Service Page Specific Styles */
+
+/* Service Hero Section */
+.service-hero {
+    position: relative;
+    min-height: 299px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.service-hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.service-hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(146, 135, 117, 0.5);
+    z-index: 2;
+}
+
+.service-hero-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 80px;
+}
+
+.service-hero-layout {
+    display: grid;
+    grid-template-columns: 20% auto;
+    gap: 40px;
+    align-items: center;
+}
+
+.service-logo img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.service-hero-title {
+    font-size: clamp(2rem, 2rem + ((1vw - 0.2rem) * 1.4), 2.875rem);
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.service-hero-separator {
+    border: none;
+    border-top: 2px solid #ffffff;
+    margin: 20px 0;
+    opacity: 0.7;
+}
+
+.service-nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.service-nav-links li {
+    margin-bottom: 10px;
+}
+
+.service-nav-links a {
+     display: inline-block;
+  padding: 10px 20px;
+  margin: 6px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #274c77;
+  border: 2px solid #ffffff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.service-nav-links a:hover {
+    background-color: #a3cef1;
+  color: #1b4965;
+  border-color: #a3cef1;
+}
+
+/* Service Intro Section */
+.service-intro {
+    padding: 40px 0;
+    background-color: #ffffff;
+}
+
+.service-intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.service-intro-content p {
+    font-size: clamp(1rem, 1rem + ((1vw - 0.2rem) * 0.2), 1.125rem);
+    margin-bottom: 20px;
+    padding: 0 80px;
+    line-height: 1.6;
+}
+
+/* Service Offerings Section */
+.service-offerings {
+    padding: 40px 0;
+    background-color: #f8f9fa;
+}
+
+.service-description {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    text-align: left;
+}
+
+.service-description p {
+    font-size: clamp(1rem, 1rem + ((1vw - 0.2rem) * 0.2), 1.125rem);
+    margin-bottom: 20px;
+    padding: 0 30px;
+    line-height: 1.6;
+}
+
+/* Journey Page Specific Styles */
+
+/* Journey Hero Section */
+.journey-hero {
+    position: relative;
+    min-height: 359px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.journey-hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.journey-hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.journey-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(179, 155, 124, 0.5);
+    z-index: 2;
+}
+
+.journey-hero-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 80px;
+}
+
+.journey-hero-layout {
+    display: grid;
+    grid-template-columns: 20% auto;
+    gap: 40px;
+    align-items: center;
+}
+
+.journey-logo img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+}
+
+.journey-hero-title {
+    font-size: clamp(2rem, 2rem + ((1vw - 0.2rem) * 1.4), 2.875rem);
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.journey-hero-separator {
+    border: none;
+    border-top: 2px solid #ffffff;
+    margin: 20px 0;
+    opacity: 0.7;
+}
+
+.journey-nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.journey-nav-links li {
+    margin-bottom: 10px;
+}
+
+.journey-nav-links a {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 6px;
+  font-size: 1rem;
+  background-color: #ffffff;
+  color: #274c77;
+  border: 2px solid #ffffff;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.journey-nav-links a:hover {
+  background-color: #a3cef1;
+  color: #1b4965;
+  border-color: #a3cef1;
+}
+
+/* Journey Intro Section */
+.journey-intro {
+    padding: 40px 0;
+    background-color: #ffffff;
+}
+
+.journey-intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.journey-intro-content p {
+    font-size: clamp(1rem, 1rem + ((1vw - 0.2rem) * 0.2), 1.125rem);
+    margin-bottom: 20px;
+    padding: 0 80px;
+    line-height: 1.6;
+}
+
+/* Journey Gallery Sections */
+.journey-gallery,
+.journey-events {
+    padding: 40px 0;
+    background-color: #f8f9fa;
+}
+
+.gallery-grid {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.gallery-column {
+    flex: 1;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    background-color: #274c77;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.gallery-item {
+    margin: 0;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+}
+
+.gallery-item figcaption {
+    color: #ffffff;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 10px;
+    margin-top: 8px;
+}
+
+/* Art Page Specific Styles */
+
+/* Art Hero Section */
+.art-hero {
+    position: relative;
+    min-height: 309px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.art-hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.art-hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.art-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(193, 195, 197, 0.5);
+    z-index: 2;
+}
+
+.art-hero-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 80px;
+}
+
+.art-hero-layout {
+    display: grid;
+    grid-template-columns: 25% auto;
+    gap: 40px;
+    align-items: center;
+}
+
+.art-logo img {
+    width: 100%;
+    max-width: 662px;
+    height: auto;
+}
+
+.art-hero-title {
+    font-size: clamp(2rem, 2rem + ((1vw - 0.2rem) * 1.4), 2.875rem);
+    color: #635744;
+    text-align: center;
+    margin: 0;
+    font-weight: 700;
+}
+
+/* Art Intro Section */
+.art-intro {
+    padding: 40px 0;
+    background-color: #f7f7f7;
+}
+
+.art-intro-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.art-intro-content p {
+    font-size: clamp(1rem, 1rem + ((1vw - 0.2rem) * 0.2), 1.125rem);
+    color: #555555;
+    margin-bottom: 20px;
+    padding: 0 30px;
+    line-height: 1.6;
+}
+
+/* Art Showcase Section */
+.art-showcase {
+    padding: 40px 0;
+    background-color: #f7f7f7;
+}
+
+.art-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 50px;
+    align-items: stretch;
+}
+
+.art-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.art-image {
+    margin: 0 0 20px 0;
+    width: 100%;
+    max-width: 700px;
+}
+
+.art-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.art-description {
+    flex: 1;
+}
+
+.art-description p {
+    font-size: clamp(1rem, 1rem + ((1vw - 0.2rem) * 0.2), 1.125rem);
+    color: #555555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Membership Page Specific Styles */
+
+/* Membership Hero Section */
+.membership-hero {
+    position: relative;
+    min-height: 416px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.membership-hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.membership-hero-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 58% 38%;
+}
+
+.membership-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(152, 152, 152, 0.5);
+    z-index: 2;
+}
+
+.membership-hero-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.membership-hero-title {
+    font-size: clamp(2rem, 2rem + ((1vw - 0.2rem) * 1.4), 2.875rem);
+    color: #274c77;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.membership-hero-description {
+    color: #333;
+    font-size: clamp(1rem, 1rem + ((1vw - 0.2rem) * 0.2), 1.125rem);
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Membership Tiers Section */
+.membership-tiers {
+    padding: 70px 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.tier-pyramid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tier {
+    width: 60%;
+    max-width: 400px;
+    padding: 20px;
+    background: #1b1b1b;
+    color: #f5f5f5;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.tier:hover {
+    transform: scale(1.03);
+}
+
+.tier-subtitle {
+    display: block;
+    font-size: 0.85em;
+    color: #a3cef1;
+    margin-top: 8px;
+    font-weight: normal;
+}
+
+.tier-supreme {
+    background: linear-gradient(to right, #1b1b1b, #2e2e2e);
+}
+
+.tier-cadre {
+    background: #333;
+}
+
+.tier-gold {
+    background: #555;
+}
+
+.tier-white {
+    background: #777;
+}
+
+.tier-new {
+    background: #999;
+}
+
+/* Membership Benefits Section */
+.membership-benefits {
+    padding: 70px 0;
+    background-color: #f8f9fa;
+}
+
+.benefits-accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.benefit-item {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 0;
+}
+
+.benefit-header {
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #1b4965;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.benefit-header:hover {
+    background-color: #f0f8ff;
+}
+
+/* ✅ 中等屏幕隐藏标题和 slogan，保留横向导航栏 */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .brand-text {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: none;
+  }
+
+  .nav-menu {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+    gap: 32px;
+  }
+
+  .nav-menu li {
+    white-space: nowrap;
+  }
+
+  .nav-menu a {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 10px 0;
+  }
+}
+
+/* ✅ 小屏（移动端）折叠菜单形式 */
+@media (max-width: 768px) {
+  .brand-text {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 20px;
+    z-index: 1500;
+    background: none;
+    border: none;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+    transform: translateY(-22px);
+  }
+
+  .hamburger {
+    width: 24px;
+    height: 2px;
+    background-color: #274c77;
+    position: relative;
+    display: block;
+  }
+
+  .hamburger::before,
+  .hamburger::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 2px;
+    background-color: #274c77;
+    left: 0;
+  }
+
+  .hamburger::before {
+    top: -8px;
+  } 
+
+  .hamburger::after {
+    top: 8px;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px; /* 出现在按钮下方 */
+    right: 10px;
+    background-color: white;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 30px;
+    border-radius: 8px;
+    z-index: 1500;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu li {
+    text-align: center;
+    list-style: none;
+  }
+
+  .nav-menu a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #274c77;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+    .journey-hero-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  /* 2. Hero 内容左右留白减少 */
+  .journey-hero-content {
+    padding: 20px;
+  }
+
+  /* 3. Hero 标题字体适配小屏幕 */
+  .journey-hero-title {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+  }
+
+  /* 4. Hero 内部链接按钮样式优化 */
+  .journey-nav-links a {
+    display: inline-block;
+    padding: 10px 16px;
+    margin: 6px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    text-decoration: none;
+  }
+
+  .journey-nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+
+  /* 5. 引言文字缩进减少 */
+  .journey-intro-content p {
+    padding: 0 20px;
+    font-size: 1rem;
+  }
+
+  /* 6. 画廊部分改为单列 */
+  .gallery-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .image-gallery {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 15px;
+  }
+
+  .gallery-item figcaption {
+    font-size: 0.85rem;
+    padding: 6px;
+  }
+
+  /* 7. 图片底部圆角略微缩小 */
+  .gallery-item img {
+    border-radius: 3px;
+  }
+  .service-hero-content {
+    padding: 20px;
+  }
+
+  .service-hero-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .service-logo img {
+    max-width: 160px;
+  }
+
+  .service-hero-title {
+    font-size: 2rem;
+  }
+
+  /* nav 链接按钮样式美化为圆角按钮 */
+  .service-nav-links a {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px;
+    font-size: 1rem;
+    background-color: #ffffff;
+    color: #274c77;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+
+  .service-nav-links a:hover {
+    background-color: #a3cef1;
+    color: #1b4965;
+  }
+
+  /* 简介和描述文字缩进减少 */
+  .service-intro-content p,
+  .service-description p {
+    padding: 0 20px;
+    font-size: 1rem;
+  }
+
+  
+  
+}
+
