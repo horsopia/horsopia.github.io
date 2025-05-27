@@ -608,13 +608,14 @@ a:hover {
 }
 
 .social-links a {
-    display: inline-block;
-    padding: 10px;
-    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
 }
 
 .social-links a:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
 }
 
 .social-icon {
@@ -1580,47 +1581,46 @@ a:hover {
     aspect-ratio: auto;
   }
   .footer-content {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
     text-align: center;
-    gap: 30px;
   }
 
-  .contact-info address,
-  .contact-info p,
-  .contact-info a {
-    text-align: center;
-    line-height: 1.8;
+  .footer-section {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  .contact-info h4,
+  .brand-info h2 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+  }
+
+  .contact-info address p,
+  .contact-info a,
+  .brand-info p {
     font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 10px;
   }
 
-  .social-links {
-    flex-wrap: wrap;
-    justify-content: center;
+  .brand-info .social-links {
+    margin: 10px 0;
     gap: 16px;
   }
 
-  .footer-bottom {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-    padding-top: 20px;
-  }
-
-  .footer-nav {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .footer-nav a {
-    font-size: 14px;
+  .social-links a {
+    font-size: 1.4rem;
+    padding: 6px;
   }
 
   .social-icon {
-    margin: 0;
-  }
-
-  .footer-section h2 {
-    font-size: 1.2rem;
+    width: 24px;
+    height: 24px;
   }
   
 }
