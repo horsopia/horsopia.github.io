@@ -182,6 +182,45 @@ a:hover {
     font-size: 1.2rem;
 }
 
+.nav-menu .dropdown {
+    position: relative;
+}
+
+.dropdown .submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    padding: 10px 0;
+    display: none;
+    flex-direction: column;
+    min-width: 140px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    list-style: none;
+}
+
+.dropdown:hover .submenu {
+    display: flex;
+}
+
+.submenu li {
+    padding: 8px 20px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+.submenu li a {
+    font-size: 0.95rem;
+    color: #274c77;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.submenu li a:hover {
+    color: #1b4965;
+}
+
 /* Main Content */
 .main-content {
     margin-top: 80px; /* Account for fixed header */
@@ -499,6 +538,7 @@ a:hover {
     color: #ffffff;
 }
 
+
 .site-footer {
     background-color: #274c77;
     color: #ffffff;
@@ -533,8 +573,9 @@ a:hover {
 }
 
 .brand-info p {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     color: #ffffff;
+    line-height: 2;
 }
 
 .social-links {
@@ -1339,6 +1380,38 @@ a:hover {
     text-decoration: none;
     white-space: nowrap;
   }
+  .dropdown .submenu {
+    position: static;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .dropdown .submenu li {
+    padding: 0;
+  }
+
+  .dropdown .submenu li a {
+    display: block;
+    padding: 10px 0;
+    font-size: 1rem;
+  }
+
+  .dropdown-toggle::after {
+    content: " ▼";
+    font-size: 0.8rem;
+  }
+
+  .dropdown .submenu {
+    display: none;
+  }
+
+  .dropdown.active .submenu {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  
+}
     .journey-hero-layout {
     display: flex;
     flex-direction: column;
@@ -1483,7 +1556,49 @@ a:hover {
   .art-image img {
     aspect-ratio: auto;
   }
-  
+  .footer-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .contact-info address,
+  .contact-info p,
+  .contact-info a {
+    text-align: center;
+    line-height: 1.8;
+    font-size: 0.95rem;
+  }
+
+  .social-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+    padding-top: 20px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-nav a {
+    font-size: 14px;
+  }
+
+  .social-icon {
+    margin: 0;
+  }
+
+  .footer-section h2 {
+    font-size: 1.2rem;
+  }
   
 }
 

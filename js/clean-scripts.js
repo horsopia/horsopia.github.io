@@ -13,7 +13,9 @@
         // 重新获取元素，确保它们已经加载到DOM中
         navToggle = document.querySelector('.nav-toggle');
         navMenu = document.querySelector('.nav-menu');
-        
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+    const dropdown = document.querySelector('.dropdown');
+
         if (navToggle && navMenu) {
             navToggle.addEventListener('click', function() {
                 navMenu.classList.toggle('active');
@@ -56,6 +58,12 @@
         } else {
             console.warn('Navigation elements not found. Will retry after header loads.');
         }
+        if (dropdownToggle && dropdown) {
+        dropdownToggle.addEventListener('click', function (e) {
+            e.preventDefault();
+            dropdown.classList.toggle('active');
+        });
+    }
     }
 
     // Scroll to top functionality
@@ -427,3 +435,4 @@ const animationStyles = `
 const styleSheet = document.createElement('style');
 styleSheet.textContent = animationStyles;
 document.head.appendChild(styleSheet);
+
