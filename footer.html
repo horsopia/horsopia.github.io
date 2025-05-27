@@ -37,4 +37,16 @@
                 </div>
             </div>
         </div>
+        <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const user = "Horsopia.fr";
+    const domain = "gmail.com";
+    const email = user + "@" + domain;
+    const link = document.getElementById("email-link");
+    if (link) {
+      link.href = "mailto:" + email;
+      link.textContent = email;
+    }
+  });
+</script>
     </footer>
