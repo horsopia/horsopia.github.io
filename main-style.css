@@ -200,9 +200,7 @@ a:hover {
     list-style: none;
 }
 
-.dropdown:hover .submenu {
-    display: flex;
-}
+
 
 .submenu li {
     padding: 8px 20px;
@@ -217,8 +215,32 @@ a:hover {
     transition: color 0.3s ease;
 }
 
-.submenu li a:hover {
-    color: #1b4965;
+
+.submenu {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 0;
+  margin-top: 10px;
+}
+
+/* 显示状态 */
+.dropdown.active .submenu {
+  display: flex;
+}
+
+/* 子菜单样式 */
+.submenu a {
+  font-size: 0.95rem;
+  padding: 6px 0;
+  color: #274c77;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* 手机和桌面均通用的 hover 样式（可选） */
+.submenu a:hover {
+  color: #1b4965;
 }
 
 /* Main Content */

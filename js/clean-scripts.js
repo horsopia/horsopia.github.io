@@ -33,16 +33,24 @@
 
             // Close mobile menu when clicking on a link
             const navLinks = navMenu.querySelectorAll('a');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    navMenu.classList.remove('active');
-                    const hamburger = navToggle.querySelector('.hamburger');
-                    if (hamburger) {
-                        hamburger.classList.remove('active');
-                    }
-                    navToggle.setAttribute('aria-expanded', 'false');
-                });
-            });
+navLinks.forEach(link => {
+  link.addEventListener('click', function(e) {
+    // 如果点击的是 dropdown toggle，就不要关闭整个菜单
+    if (link.classList.contains('dropdown-toggle')) {
+      e.preventDefault(); // 阻止 # 跳转
+      return;
+    }
+
+    // 否则正常关闭菜单
+    navMenu.classList.remove('active');
+    const hamburger = navToggle.querySelector('.hamburger');
+    if (hamburger) {
+      hamburger.classList.remove('active');
+    }
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
 
             // Close mobile menu when clicking outside
             document.addEventListener('click', function(event) {
@@ -64,6 +72,17 @@
             dropdown.classList.toggle('active');
         });
     }
+    document.addEventListener('DOMContentLoaded', function () {
+  const dropdownToggle = document.querySelector('.dropdown-toggle');
+  const dropdown = document.querySelector('.dropdown');
+
+  if (dropdownToggle && dropdown) {
+    dropdownToggle.addEventListener('click', function (e) {
+      e.preventDefault(); // 阻止跳转 #
+      dropdown.classList.toggle('active');
+    });
+  }
+});
     }
 
     // Scroll to top functionality
