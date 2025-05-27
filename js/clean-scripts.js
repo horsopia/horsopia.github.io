@@ -329,6 +329,50 @@ navLinks.forEach(link => {
         }, true);
     }
 
+document.addEventListener('click', function (e) {
+  const toggle = e.target.closest('.dropdown-toggle');
+  if (toggle) {
+    e.preventDefault();
+    const dropdown = toggle.parentElement.querySelector('.submenu');
+    if (dropdown) {
+      // 关闭所有其他打开的 submenu（可选）
+      document.querySelectorAll('.submenu.active').forEach(menu => {
+        if (menu !== dropdown) menu.classList.remove('active');
+      });
+
+      dropdown.classList.toggle('active');
+    }
+  } else {
+    // 点击外部关闭所有 submenu
+    document.querySelectorAll('.submenu.active').forEach(menu => {
+      menu.classList.remove('active');
+    });
+  }
+});
+
+
+    function initLanguageSwitcher() {
+  const languageLinks = document.querySelectorAll('.language-dropdown .submenu a');
+
+  languageLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      const targetLang = link.getAttribute('data-lang'); // zh / en / fr
+      const currentPath = window.location.pathname;
+
+      // 提取当前页面文件名，例如 journey.html
+      const parts = currentPath.split('/');
+      const currentFile = parts[2] || 'index.html'; // zh/index.html → index.html
+
+      // 构建目标路径
+      const targetPath = `/${targetLang}/${currentFile}`;
+
+      window.location.href = targetPath;
+    });
+  });
+}
+
     // Initialize all functionality when DOM is ready
     function init() {
         initMobileNavigation();
@@ -357,38 +401,25 @@ navLinks.forEach(link => {
 
     // 监听头部加载完成事件
     async function loadReusableParts() {
-        try {
-            const headerResponse = await fetch('/header.html');
-            if (!headerResponse.ok) {
-                throw new Error(`Failed to load header: ${headerResponse.status}`);
-            }
-            const headerText = await headerResponse.text();
-            const headerContainer = document.querySelector('#include-header');
-            
-            if (headerContainer) {
-                headerContainer.innerHTML = headerText;
-                console.log('Header loaded successfully');
-                
-                // 头部加载完成后，重新初始化导航菜单
-                initMobileNavigation();
-                initAccessibility();
-            }
-            
-            const footerResponse = await fetch('/footer.html');
-            if (!footerResponse.ok) {
-                throw new Error(`Failed to load footer: ${footerResponse.status}`);
-            }
-            const footerText = await footerResponse.text();
-            const footerContainer = document.querySelector('#include-footer');
-            
-            if (footerContainer) {
-                footerContainer.innerHTML = footerText;
-                console.log('Footer loaded successfully');
-            }
-        } catch (error) {
-            console.error('Error loading reusable parts:', error);
+    
+            const langFolder = window.location.pathname.split("/")[1]; // zh / en / fr
+
+    // 加载 header
+    fetch(`/${langFolder}/header.html`)
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("include-header").innerHTML = data;
+         initMobileNavigation();
+         initLanguageSwitcher();
+      });
+
+    // 加载 footer
+    fetch(`/${langFolder}/footer.html`)
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("include-footer").innerHTML = data;
+      });
         }
-    }
 
     // 执行加载可重用部分
     loadReusableParts();

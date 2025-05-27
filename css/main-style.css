@@ -225,6 +225,10 @@ a:hover {
   margin-top: 10px;
 }
 
+.submenu.active {
+  display: block;
+}
+
 /* 显示状态 */
 .dropdown.active .submenu {
   display: flex;
@@ -242,6 +246,17 @@ a:hover {
 /* 手机和桌面均通用的 hover 样式（可选） */
 .submenu a:hover {
   color: #1b4965;
+}
+
+.language-switch a {
+  display: block;
+  padding: 5px 10px;
+  white-space: nowrap;
+}
+
+.language-dropdown .submenu {
+  right: 0;
+  left: auto; /* 避免浏览器默认从左展开 */
 }
 
 /* Main Content */
@@ -1709,6 +1724,24 @@ a:hover {
     width: 24px;
     height: 24px;
   }
-  
+   .language-dropdown .submenu {
+    position: static; /* 不要浮动，变成普通块元素 */
+    display: block;
+    width: 100%;
+    background-color: white;
+    box-shadow: none;
+    padding: 0;
+  }
+
+
+
+  .language-dropdown .submenu li a {
+    display: block;
+    padding: 12px 16px;
+  }
+
+  .language-dropdown .submenu:not(.active) {
+    display: none;
+  }
 }
 
