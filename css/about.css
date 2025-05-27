@@ -377,9 +377,7 @@ a:hover {
 @media (max-width: 768px) {
     
     
-    .header-container {
-        padding: 15px 20px;
-    }
+    
     
     .brand-section {
         gap: 15px;
