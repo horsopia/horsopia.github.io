@@ -455,3 +455,9 @@ const styleSheet = document.createElement('style');
 styleSheet.textContent = animationStyles;
 document.head.appendChild(styleSheet);
 
+const user = "Horsopia.fr";
+  const domain = "gmail.com";
+  const email = user + "@" + domain;
+  const link = document.getElementById("email-link");
+  link.href = "mailto:" + email;
+  link.textContent = email;
