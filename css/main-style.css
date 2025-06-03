@@ -491,17 +491,6 @@ a:hover {
   text-align: center;
 }
 
-.homepage-about::before {
-  position: absolute;
-  inset: 0;
-  background-color: rgba(255, 255, 255, 0.93); /* 👈 白色透明叠层，保证内容可读性 */
-  z-index: 1;
-}
-
-.homepage-about .container {
-  position: relative;
-  z-index: 2; /* ✅ 让内容盖在蒙层之上 */
-}
 
 .homepage-about-content p {
   font-size: 1.125rem;
@@ -733,7 +722,7 @@ a:hover {
 
 .partners-scroll {
     overflow: hidden;
-    width: 100vw;
+    width: 100%;
     margin-left: calc(-50vw + 50%);
     background-color: #f5f5f5;
     padding: 20px 0;
