@@ -373,6 +373,18 @@ document.addEventListener('click', function (e) {
   });
 }
 
+function localizeNavigationLinks() {
+  const langFolder = window.location.pathname.split("/")[1]; // zh / en / fr
+  const navLinks = document.querySelectorAll('.nav-link');
+
+  navLinks.forEach(link => {
+    const page = link.getAttribute('data-page');
+    if (page) {
+      link.setAttribute('href', `/${langFolder}/${page}`);
+    }
+  });
+}
+
     // Initialize all functionality when DOM is ready
     function init() {
         initMobileNavigation();
@@ -385,6 +397,21 @@ document.addEventListener('click', function (e) {
         initAccessibility();
         initPerformanceOptimizations();
         initErrorHandling();
+        const currentPage = window.location.pathname.split("/").pop().split("#")[0];
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const linkPage = link.getAttribute('data-page');
+        if (linkPage && linkPage === currentPage) {
+            link.classList.add('current-page');
+        }
+    });
+
+    // Highlight current language
+    const currentLang = window.location.pathname.split('/')[1];
+    document.querySelectorAll('.lang-link').forEach(link => {
+        if (link.dataset.lang === currentLang) {
+            link.classList.add('current-lang');
+        }
+    });
         
         // Add loaded class to body for CSS animations
         document.body.classList.add('js-loaded');
@@ -411,6 +438,7 @@ document.addEventListener('click', function (e) {
         document.getElementById("include-header").innerHTML = data;
          initMobileNavigation();
          initLanguageSwitcher();
+         localizeNavigationLinks();
       });
 
     // 加载 footer
@@ -485,4 +513,68 @@ const animationStyles = `
 const styleSheet = document.createElement('style');
 styleSheet.textContent = animationStyles;
 document.head.appendChild(styleSheet);
+
+document.addEventListener('DOMContentLoaded', function () {
+  const track = document.querySelector('.carousel-track');
+  const slides = document.querySelectorAll('.carousel-slide');
+  const prevBtn = document.querySelector('.carousel-btn.prev');
+  const nextBtn = document.querySelector('.carousel-btn.next');
+  const dots = document.querySelectorAll('.carousel-dots .dot');
+  const container = document.querySelector('.carousel-container');
+
+  if (!track || slides.length === 0) return;
+
+  let currentIndex = 0;
+  let totalSlides = slides.length;
+  let autoSlideInterval;
+
+  // ✅ 滚动函数
+  function updateSlide(index) {
+    if (index < 0) index = totalSlides - 1;
+    if (index >= totalSlides) index = 0;
+    track.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach(dot => dot.classList.remove('active'));
+    if (dots[index]) dots[index].classList.add('active');
+    currentIndex = index;
+  }
+
+  // ✅ 事件绑定
+  function nextSlide() {
+    updateSlide(currentIndex + 1);
+  }
+
+  function prevSlide() {
+    updateSlide(currentIndex - 1);
+  }
+
+  nextBtn?.addEventListener('click', nextSlide);
+  prevBtn?.addEventListener('click', prevSlide);
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => {
+      const target = parseInt(dot.dataset.index);
+      updateSlide(target);
+    });
+  });
+
+  // ✅ 自动播放
+  function startAutoSlide() {
+    if (autoSlideInterval) clearInterval(autoSlideInterval);
+    autoSlideInterval = setInterval(() => {
+      nextSlide();
+    }, 5000); // 每5秒切换一次
+  }
+
+  function stopAutoSlide() {
+    clearInterval(autoSlideInterval);
+  }
+
+  // ✅ 鼠标移入停止，移出恢复
+  container.addEventListener('mouseenter', stopAutoSlide);
+  container.addEventListener('mouseleave', startAutoSlide);
+
+  // ✅ 初始化
+  updateSlide(0);
+  startAutoSlide(); // 👈 确保页面加载就开始自动轮播
+});
 

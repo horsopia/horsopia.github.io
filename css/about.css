@@ -113,9 +113,9 @@ a:hover {
 
 .about-content-layout {
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2fr 1fr;  /* 原来是 2fr 1fr */
     gap: 60px;
-    align-items: start;
+    align-items: center; /* 从 start 改为 center */
     margin-bottom: 60px;
 }
 
@@ -147,6 +147,27 @@ a:hover {
     width: 100%;
     height: auto;
     border-radius: 8px;
+}
+
+.core-pillars {
+  margin: 40px 0;
+  padding-left: 20px;
+}
+
+.core-pillars .pillar {
+  margin-bottom: 24px;
+  text-indent: 0;
+}
+
+.core-pillars .pillar p {
+  margin: 0;
+  line-height: 1.8;
+  text-indent: -1.5em; /* 图标和标题对齐 */
+  padding-left: 2em;
+}
+
+.core-pillars .pillar strong {
+  color: #1b4965;
 }
 
 /* Section Headers */

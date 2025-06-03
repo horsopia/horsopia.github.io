@@ -13,21 +13,71 @@
 </head>
 
 <body>
+
 <header><div id="include-header"></div></header>
     <main class="main-content">
         <section class="hero-banner">
-            <div class="hero-image">
-                <img src="/images/马图/马图1.webp" alt="马术背景图">
-                <div class="hero-overlay"></div>
-            </div>
-            <div class="hero-content">
-                <h2 class="hero-title">"与我们一起，开始这段跨越疆界的马术之旅。"</h2>
-                <div class="hero-values">
-                    <span>自由</span>
-                    <span>野心</span>
-                    <span>真诚</span>
-                </div>
-            </div>
+            <div class="carousel-container">
+  <div class="carousel-track">
+    <!-- Slide 01: 欢迎页 -->
+    <div class="carousel-slide">
+      <img src="/images/马图/马图1.webp" alt="欢迎页图">
+      <div class="slide-text">
+        <h2>与我们一起，开始这段跨越疆界的马术之旅。</h2>
+        <p class="keywords">自由 · 野心 · 真诚</p>
+      </div>
+    </div>
+<div class="carousel-slide">
+  <img src="/images/马图/henri-buenen-aSDSo5DDJQU-unsplash.webp" alt="协会背景图"style="object-position: center 40%;" transform: scale(1.1);>
+  <div class="slide-text">
+    <h2>源于法国，联结世界的马术平台</h2>
+    <p>致力于中欧马术教育推广与文化交流，</p>
+<p>打造心灵与世界连接的桥梁。</p>
+    <a href="/zh/about.html" class="btn">了解更多</a>
+  </div>
+</div>
+    <!-- Slide 02 ~ 07: 新闻页 -->
+    <div class="carousel-slide">
+      <img src="/images/news/christine-benton-FPIYQDMETJA-unsplash.webp" alt="新闻1">
+      <div class="slide-text">
+        <h2>骑手夏令营——法国安娜德马场度过您的美妙夏日</h2>
+        <p>2025 法国经典马术夏令营, 正式开启招生！</p>
+        <a href="https://mp.weixin.qq.com/s/-ei2jlPXy-NmbClq0QtNbw" class="btn">了解更多</a>
+      </div>
+    </div>
+
+    <div class="carousel-slide">
+        <img src="/images/news/IMG_8032.jpg">
+        <div class="slide-text">
+            <h2>Horsopia登上法国主流媒体！</h2>
+            <p>Horsopia即将接受法国主流媒体《La Nouvelle République》的专题采访，</p><p>作为中法马术文化交流典范，</p><p>展示中国骑手在法国的精彩时刻。</p>
+            <a href="/zh/news2.html" class="btn">了解更多</a>
+        </div>
+    </div>
+    <div class="carousel-slide">
+        <img src="/images/news/IMG_0458.webp">
+        <div class="slide-text">
+            <h2>2025成人马术集训营</h2>
+            <p>沉浸式马术集训</p><p>高等级法国教授授课</p><p>助力每一个骑士梦想</p>
+            <a href="/news/法国成人马术集训团.PDF" class="btn">了解更多</a>
+        </div>
+    </div>
+  </div>
+
+  <!-- 导航箭头 -->
+  <button class="carousel-btn prev">&#10094;</button>
+  <button class="carousel-btn next">&#10095;</button>
+
+  <!-- 分页导航 -->
+  <div class="carousel-dots">
+    <button class="dot active" data-index="0">01</button>
+    <button class="dot" data-index="1">02</button>
+    <button class="dot" data-index="2">03</button>
+    <button class="dot" data-index="3">04</button>
+    <button class="dot" data-index="4">05</button>
+
+  </div>
+</div>
         </section>
 <!-- 协会介绍 Section -->
 <section class="homepage-about" id="about">
@@ -36,7 +86,17 @@
       <h3 class="section-title">协会介绍</h3>
     </header>
     <div class="homepage-about-content">
-      <p>（协会介绍的文字内容）</p>
+      <p><strong>环球马托邦协会</strong>（Horsopia Internationale）</p>
+<p>源于法国，联结世界的马术文化平台。</p>
+<div style="height: 20px;"></div>
+<p>环球马托邦协会成立于2019年，2025年正式注册于<strong>法国尚皮尼·马恩河畔</strong>、由一群因马结缘的温暖的人们共同创办，致力于推广欧洲马术教育体系、促进中欧马术交流与产业发展。</p>
+<div style="height: 20px;"></div>
+<p>我们专注于<strong>马术课程引进</strong>、<strong>职业路径搭建</strong>、<strong>国际教练与运动马匹资源对接</strong>，并积极推动以马为灵感的文化艺术合作，打造连接中法、辐射欧洲的马术平台。</p>
+<div style="height: 20px;"></div>
+<p>六年来，协会已与欧洲如: 法国、荷兰等地多所专业马术院校深度合作，开展<strong>青少年集训</strong>、<strong>成人课程</strong>及<strong>骑手私教项目</strong>，持续推动马术教育本土化、国际化。</p>
+<blockquote class="association-quote">
+  <strong>我们相信，马术不仅是一项运动，更是一种文化的传承与心灵的链接。</strong>
+</blockquote>
     </div>
   </div>
 </section>
@@ -46,16 +106,22 @@
   <h3 class="section-title">新闻动态</h3>
   <div style="height: 40px;"></div>
   <div class="highlight-grid">
-    <a href="/news1.html" class="highlight-card" style="background-image: url('/images/news/IMG_9482.jpg');">
+    <a href="https://mp.weixin.qq.com/s/-ei2jlPXy-NmbClq0QtNbw" class="highlight-card" style="background-image: url('/images/news/christine-benton-FPIYQDMETJA-unsplash.webp');">
       <div class="highlight-text">
-        <h3>新闻标题</h3>
-        <p>新闻简介</p>
+        <h3>骑手夏令营——法国安娜德马场度过您的美妙夏日</h3>
+        <p>2025 法国经典马术夏令营, 正式开启招生！</p>
       </div>
     </a>
-    <a href="/news2.html" class="highlight-card" style="background-image: url('/images/news/IMG_8032.jpg');">
+    <a href="/zh/news2.html" class="highlight-card" style="background-image: url('/images/news/IMG_8032.jpg');">
       <div class="highlight-text">
-        <h3>新闻标题</h3>
-        <p>新闻简介</p>
+        <h3>Horsopia登上法国主流媒体！</h3>
+        <p>Horsopia即将接受法国主流媒体《La Nouvelle République》的专题采访，</p><p>作为中法马术文化交流典范，</p><p>展示中国骑手在法国的精彩时刻。</p></p>
+      </div>
+    </a>
+    <a href="/news/法国成人马术集训团.PDF" class="highlight-card" style="background-image: url('/images/news/IMG_0458.webp');">
+      <div class="highlight-text">
+        <h3>2025成人马术集训营</h3>
+        <p>沉浸式马术集训</p><p>高等级法国教授授课</p><p>助力每一个骑士梦想</p></p>
       </div>
     </a>
   </div>
