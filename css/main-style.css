@@ -22,6 +22,7 @@
 
 
 
+
 html {
     scroll-behavior: smooth;
 }
@@ -717,30 +718,33 @@ a:hover {
 
 /* Partners Section */
 .partners-section {
-    padding: 50px 0;
+    padding: 20;
     background-color: #ffffff;
 }
 
 .partners-scroll {
-    overflow: hidden;
-    width: 100%;
-    margin-left: calc(-50vw + 50%);
-    background-color: #f5f5f5;
-    padding: 20px 0;
-    margin-bottom: 40px;
+  width: 100%;
+  overflow: hidden;
+  background-color: #f5f5f5;
+  padding: 20px 20px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 40px ;
 }
 
 .partners-track {
-    display: flex;
-    width: fit-content;
-    animation: scroll-left 40s linear infinite;
+  display: flex;
+  gap: 4em;
+  align-items: center;
+  width: max-content;
+  animation: scroll-left 40s linear infinite;
 }
 
 .partners-track img {
     height: 50px;
-    margin: 0 2em;
-    object-fit: contain;
-    transition: transform 0.3s ease;
+  object-fit: contain;
+  transition: transform 0.3s ease;
 }
 
 .partners-track img:hover {
@@ -759,7 +763,7 @@ a:hover {
 .partnership-info {
     text-align: center;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 40px auto;
 }
 
 .partnership-title {
