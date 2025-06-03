@@ -407,6 +407,7 @@ a:hover {
 /* 箭头按钮 */
 .carousel-btn {
   position: absolute;
+   color: #1b4965; 
   top: 50%;
   transform: translateY(-50%);
   background: rgba(255,255,255,0.7);
@@ -1864,6 +1865,21 @@ a:hover {
 
   .language-dropdown .submenu:not(.active) {
     display: none;
+  }
+  .carousel-dots {
+    bottom: -30px; /* 远离图片底部 */
+    position: relative;
+    margin-top: 1rem;
+    justify-content: center;
+  }
+
+  .slide-text {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .slide-text .btn {
+    margin-top: 1rem;
   }
 }
 
