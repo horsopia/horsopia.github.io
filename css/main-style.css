@@ -20,7 +20,14 @@
     box-sizing: border-box;
 }
 
-
+html,
+body {
+  overflow-x: hidden; /* 禁止 body 出现横向滚动条 */
+  max-width: 100%;     /* 防止 body 被超宽元素撑破 */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 
 html {
@@ -389,6 +396,8 @@ a:hover {
   font-size: 2rem;
   margin-bottom: 1rem;
   text-shadow: 0 0 5px #1b4965;
+  text-align: center;
+  white-space: normal;
 }
 .slide-text p {
   font-size: 1.1rem;
@@ -403,6 +412,9 @@ a:hover {
   border-radius: 5px;
   text-decoration: none;
   font-weight: bold;
+}
+.br-mobile {
+  display: none;
 }
 
 /* 箭头按钮 */
@@ -544,6 +556,7 @@ a:hover {
   overflow: hidden;
   text-decoration: none;
   transition: transform 0.3s ease;
+  box-shadow: 14px 13px 2px 0px rgba(186, 190, 193, 0.15);
 }
 
 .highlight-card:hover {
@@ -605,7 +618,7 @@ a:hover {
     border-radius: 12px;
     overflow: hidden;
     background-color: #ffffff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 14px 13px 2px 0px rgba(158, 167, 173, 0.15);
     transition: transform 0.3s ease;
 }
 
@@ -679,76 +692,109 @@ a:hover {
 }
 
 /* Activity Calendar */
+
 .activity-calendar {
-    padding: 70px 0;
-    background-color: #f8f9fa;
+  padding: 60px 40px;
+  background-color: #f8f9fa;
 }
 
-.timeline {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
-    max-width: 1080px;
-    margin: 0 auto;
+.timeline-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.event-card {
-    background-color: #a3cef1;
-    padding: 24px;
-    border-radius: 12px;
-    transition: transform 0.3s ease;
+
+.timeline-month {
+  background-color: #f5f7fa;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 11px 10px 2px rgba(95, 168, 211, 0.15);
 }
 
-.event-card:hover {
-    transform: translateY(-5px);
+.timeline-month h3 {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #1b4965;
+  border-bottom: 2px solid #5fa8d3;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
 }
 
-.event-month {
-    font-weight: bold;
-    font-size: 1.2em;
-    margin-bottom: 12px;
-    color: #1b4965;
+.month-events {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.event-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.event-thumbnail {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  border-radius: 6px;
+  aspect-ratio: 1 / 1;
+}
+
+.event-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 6px;
 }
 
 .event-description {
-    font-size: 0.95em;
-    color: #333;
-    line-height: 1.5;
+  color: #1b4965;
+  font-size: 0.95em;
 }
+
 
 /* Partners Section */
 .partners-section {
-    padding: 20;
-    background-color: #ffffff;
+  background-color: #ffffff;
+  padding: 40px 0;
 }
 
+/* ✅ 用全屏宽度避免 container 限制 */
 .partners-scroll {
   width: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: #f5f5f5;
-  padding: 20px 20px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  margin: 40px 0 40px ;
+  padding: 20px 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
+/* ✅ 滚动内容内部仍可横向布局 */
 .partners-track {
   display: flex;
-  gap: 4em;
   align-items: center;
-  width: max-content;
+  gap: 4em;
+  padding: 0 20px;
   animation: scroll-left 40s linear infinite;
+  width: max-content;
+  box-sizing: border-box;
 }
 
 .partners-track img {
-    height: 50px;
+  height: 50px;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
 
 .partners-track img:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 @keyframes scroll-left {
@@ -1148,10 +1194,9 @@ a:hover {
   padding: 10px 20px;
   margin: 6px;
   font-size: 1rem;
-  background-color: #ffffff;
+  background-color: #dedede;
   color: #274c77;
-  border: 2px solid #ffffff;
-  border-radius: 25px;
+  border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
@@ -1203,7 +1248,7 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    background-color: #274c77;
+    background-color: #4470a3;
     padding: 20px;
     border-radius: 8px;
 }
@@ -1559,7 +1604,6 @@ a:hover {
   .hero-title {
     font-size: 1.5rem;
     line-height: 1.6;
-    word-break: break-word;
     padding: 0 10px;
   }
 
@@ -1634,6 +1678,13 @@ a:hover {
     text-decoration: none;
     white-space: nowrap;
   }
+
+ .event-thumbnail img {
+    width: 62px;
+    height: 62px;
+    object-fit: cover;
+  }
+
   .dropdown .submenu {
     position: static;
     background: none;
@@ -1666,6 +1717,8 @@ a:hover {
     gap: 0;
   
 }
+
+
     .journey-hero-layout {
     display: flex;
     flex-direction: column;
@@ -1674,6 +1727,7 @@ a:hover {
     gap: 20px;
   }
 
+  
   /* 2. Hero 内容左右留白减少 */
   .journey-hero-content {
     padding: 20px;
@@ -1884,6 +1938,10 @@ a:hover {
 
   .slide-text .btn {
     margin-top: 1rem;
+  }
+
+  .br-mobile {
+    display: inline;
   }
 }
 
